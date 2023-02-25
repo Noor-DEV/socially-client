@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  background: teal;
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+.header {
+  padding-top: 2rem;
+}
+.text {
+  padding-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.btns {
+  margin-top: 2rem;
+}
+.btn {
+  padding: 0.75rem 2.5rem;
+  cursor: pointer;
+  background: none;
+  border: 1px solid crimson;
+}
+.btn:hover {
+  background: #fff;
+  color: teal;
+}
