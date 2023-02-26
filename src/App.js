@@ -30,30 +30,23 @@ function App() {
   const isAuth = useSelector(getIsAuth);
 
   useEffect(() => {
-    let timerOut = setTimeout(() => {
-      console.log("............TIMEOUT-RELOAD-AFTER-LOGIN..............");
-      fetch("https://socially-backend.onrender.com/isAuth", {
-        credentials: "include",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (!data.isAuth) {
-            const calculated_isAuth = Boolean(token && user);
+    fetch("https://socially-backend.onrender.com/isAuth", {
+      credentials: "include",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.isAuth) {
+          const calculated_isAuth = Boolean(token && user);
 
-            return dispatch(changeAuth({ isAuth: calculated_isAuth }));
-          }
+          return dispatch(changeAuth({ isAuth: calculated_isAuth }));
+        }
 
-          dispatch(changeAuth({ isAuth: data.isAuth }));
-          dispatch(setLogin({ user: data.user, token: null }));
-        });
-    }, 5000);
-
-    return () => {
-      clearTimeout(timerOut);
-    };
+        dispatch(changeAuth({ isAuth: data.isAuth }));
+        dispatch(setLogin({ user: data.user, token: null }));
+      });
   });
 
   const mode = useSelector(getMode);
