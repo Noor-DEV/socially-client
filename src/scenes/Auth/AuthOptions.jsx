@@ -33,7 +33,7 @@ const AuthOptions = () => {
     return () => {
       clearInterval(intervalCheck);
     };
-  });
+  },[]);
   const navigate = useNavigate();
   const handleGoogleOauth = async () => {
     console.log("REDIRECT2GOOGLESSO....................");
