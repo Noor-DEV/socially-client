@@ -103,7 +103,10 @@ const AuthOptions = () => {
               sx={{ width: "100%", p: ".75rem", borderRadius: "4rem" }}
               mb="2rem"
               variant="outlined"
-              onClick={handleGoogleOauth}
+              onClick={() => {
+                console.log("Disabled due to some errors...........");
+                // handleGoogleOauth();
+              }}
             >
               <Google /> <span style={{ marginLeft: ".5rem" }}>Google</span>
             </Button>
