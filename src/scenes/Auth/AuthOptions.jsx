@@ -108,7 +108,10 @@ const AuthOptions = () => {
                 // handleGoogleOauth();
               }}
             >
-              <Google /> <span style={{ marginLeft: ".5rem" }}>Google</span>
+              <Google />{" "}
+              <span style={{ marginLeft: ".5rem" }}>
+                Google *** DISABLED FOR NOW
+              </span>
             </Button>
           </Box>
           <Box mb="2rem" width="300px">
