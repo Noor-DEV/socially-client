@@ -31,6 +31,7 @@ function App() {
 
   useEffect(() => {
     let timerOut = setTimeout(() => {
+      console.log("............TIMEOUT-RELOAD-AFTER-LOGIN..............");
       fetch("https://socially-backend.onrender.com/isAuth", {
         credentials: "include",
         headers: {
