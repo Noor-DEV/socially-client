@@ -3,10 +3,20 @@ import { Box, Button, Typography } from "@mui/material";
 import { Google } from "@mui/icons-material";
 import Navbar from "../navbar/Navbar";
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setLogin,
+  getMode,
+  getToken,
+  getUser,
+  getIsAuth,
+  changeAuth,
+} from "../../store/index";
 const AuthOptions = () => {
-  // const dispatch = useDispatch();
-  // const POP_UP_STATE = useSelector(getPopUpState);
+  const dispatch = useDispatch();
+  const token = useSelector(getToken);
+  const user = useSelector(getUser);
+  const isAuth = useSelector(getIsAuth);
   useEffect(() => {
     const intervalCheck = setInterval(() => {
       // ........................
@@ -33,7 +43,7 @@ const AuthOptions = () => {
     return () => {
       clearInterval(intervalCheck);
     };
-  },[]);
+  }, []);
   const navigate = useNavigate();
   const handleGoogleOauth = async () => {
     console.log("REDIRECT2GOOGLESSO....................");
